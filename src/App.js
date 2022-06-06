@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react';
+export default class Students extends Component {
+state={
+data:[
+{id:1,name:'salah',email:'st1@gmail.com'},
+{id:2,name:'omar',email:'st2@gmail.com'},
+{id:3,name:'hadi',email:'st3@gmail.com'},
+{id:4,name:'Saiid',email:'st4@gmail.com'}
+]
 }
-
-export default App;
+render() {
+const listItems = this.state.data.map((stud) => {
+return (<div key={stud.id}> {stud.name}</div>)
+})
+return (
+<div >
+{listItems}
+</div>
+)
+}
+}
